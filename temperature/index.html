@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Convert Temperature - Clutools</title>
+		<meta name="description" content=""> <!-- change -->
+		<meta name="keywords" content=""> <!-- change -->
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" href="../images/logo.svg" type="image/svg+xml">
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body onresize="resize()">
+		<div id="navbar">
+			<img src="../images/logo.svg" id="logo">
+			<div id="title">Convert Celsius Temperature To Kelvin Temperature</div>
+			<div id="icons">
+				<img src="../images/theme.svg" class="icon">
+				<img src="../images/donate.svg" class="icon">
+				<img src="../images/settings.svg" class="icon">
+				<img src="../images/language.svg" class="icon">
+			</div>
+		</div>
+		<div id="main">
+			<div id="inputs">
+				<div class="inputContainer s0" id="c1">
+					<div class="inputTextOuter">
+						<div class="inputTextInner">Celsius:</div>
+					</div>
+					<input class="input" id="i1" type="text" autocomplete="off" value="0" oninput="convert(1)">
+				</div>
+				<div class="inputContainer s0" id="c2">
+					<div class="inputTextOuter">
+						<div class="inputTextInner">Fahrenheit:</div>
+					</div>
+					<input class="input" id="i2" type="text" autocomplete="off" value="32" oninput="convert(2)">
+				</div>
+				<div class="inputContainer s0" id="c0">
+					<div class="inputTextOuter">
+						<div class="inputTextInner">Kelvin:</div>
+					</div>
+					<input class="input" id="i0" type="text" autocomplete="off" value="273.15" oninput="convert(0)">
+				</div>
+			</div>
+			<div id="moreUnitsOuter">
+				<div id="moreUnitsTitle">More units to covert in:</div>
+				<div id="moreUnits">
+					<div class="moreUnit" id="m3" onclick='units[3] = {name: "Delise", convert(val) {return (373.15 - val) * 3 / 2}, to0(val) {return 373.15 - val * 2 / 3}}; addUnit(3);'>Delisle</div>
+					<div class="moreUnit" id="m4" onclick='addUnit(4);'>Réaumur</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			var units = {
+				0: {name: "Kelvin", convert(val) {return val}, to0(val) {return val}},
+				1: {name: "Celsius", convert(val) {return val - 273.15}, to0(val) {return val + 273.15}},
+				2: {name: "Fahrenheit", convert(val) {return (val - 273.15) * 9/5 + 32}, to0(val) {return (val - 32) * 5/9 + 273.15}},
+			};
+			var value = 273.15;
+		</script>
+		<script src="inputs.js"></script>
+		<script src="convert.js"></script>
+	</body>
+</html>

@@ -1,0 +1,256 @@
+:root {
+	--font: Ubuntu, sans-serif;
+	
+	--background: #222;
+	--navbar: #282828;
+	--navbarHeight: 100px;
+	--navbarBottom: 3em;
+
+	--logoMargin: 10px;
+	--logoOpacity: 0.6;
+	--logoOpacityHover: 1;
+
+	--title: #880;
+	--titleFontSize: 50px;
+	
+	--iconsMargin: 10px;
+	--iconSize: 40px;
+	--iconMargin: 5px;
+	--iconOpacity: 0.7;
+	--iconOpacityHover: 1;
+
+	--rowHeight: 8.5rem;
+	--rowTop: 3rem;
+
+	--inputBox: #444;
+
+	--inputText: #cc0;
+	--inputTextHover: #ee0;
+	--inputTextFontSize: 2rem;
+	--inputTextHeight: 1.75em;
+	--inputTextPadding: 0px 40px 0px 40px;
+	--inputTextTransition: 100ms;
+
+	--input: #ddd;
+	--inputWidth: 80%;
+	--inputLeft: 10%;
+	--inputHeight: 1.75em;
+	--inputRadius: 0.5em;
+	--inputFontSize: 3em;
+
+	--moreUnitsTitle: #555;
+	--moreUnitsTitleHover: #777;
+	--moreUnitsTop: 3rem;
+	--moreUnitsTitleHeight: 2em;
+	--moreUnitsTitleFontSize: 1em;
+	
+	--moreUnitsBox: #333;
+	--moreUnitsText: #555;
+	--moreUnitFontSize: 1.1rem;
+	--moreUnitTextHover: #777;
+	--moreUnitHeight: 1.7em;
+	--moreUnitMargin: 0.5em;
+	--moreUnitPadding: 0 0.8em 0 0.8em;
+	--moreUnitBorderRadius: 0.8em;
+}
+
+body {
+	background-color: var(--background);
+	margin: 0;
+	padding: 0;
+}
+#navbar {
+	width: 100%;
+	background-color: var(--navbar);
+	display: flex;
+	user-select: none;
+}
+@media screen and (min-width: 900px) {
+	#navbar {
+		margin-bottom: var(--navbarBottom);
+	}
+}
+
+#title {
+	width: calc(100% - var(--navbarHeight) * 2);
+	min-height: var(--navbarHeight);
+	line-height: var(--navbarHeight);
+	font-size: var(--titleFontSize);
+	text-align: center;
+	font-family: var(--font);
+	color: var(--title);
+}
+#logo {
+	height: calc(var(--navbarHeight) - 2 * var(--logoMargin));
+	width: calc(var(--navbarHeight) - 2 * var(--logoMargin));
+	margin: var(--logoMargin);
+	cursor: pointer;
+	transition: 300ms;
+	opacity: var(--logoOpacity);
+}
+#logo:hover {
+	transform: scale(1.1, 1.1);
+	opacity: var(--logoOpacityHover);
+}
+#icons {
+	display: grid;
+	grid-template-columns: 2fr 2fr;
+	height: calc(var(--navbarHeight) - 2 * var(--iconsMargin));
+	width: calc(var(--navbarHeight) - 2 * var(--iconsMargin));
+	margin: var(--iconsMargin);
+}
+.icon {
+	width: calc(var(--iconSize) - 2 * var(--iconMargin));
+	height: calc(var(--iconSize) - 2 * var(--iconMargin));
+	margin: var(--iconMargin);
+	opacity: var(--iconOpacity);
+	transition: 300ms;
+	cursor: pointer;
+}
+.icon:hover {
+	opacity: var(--iconOpacityHover);
+	transform: scale(1.3, 1.3);
+}
+
+#main {
+	width: 100%;
+	overflow: auto;
+}
+
+#buttons {
+	display: block;
+	float: left;
+	width: 100%;
+	height: var(--buttonOuterHeight);
+	margin-top: var(--buttonsTop);
+}
+.buttonOuter {
+	display: block;
+	float: left;
+	width: var(--buttonOuterWidth);
+	height: var(--buttonOuterHeight);
+}
+
+
+#inputs {
+	display: block;
+	float: left;
+	width: 100%;
+}
+.s3 {
+	width:  33.3%;
+}
+.s2 {
+	width: 50%;
+}
+.s1 {
+	width: 100%;
+}
+.s0 {
+	display: none !important;
+}
+.inputContainer {
+	display: block;
+	float: left;
+	margin-top: var(--rowTop);
+	height: var(--rowHeight);
+}
+.inputContainer:hover .inputTextInner {
+	color: var(--inputTextHover);
+}
+.inputTextOuter {
+	display: flex;
+	float: left;
+	width: 100%;
+	justify-content: center;
+}
+.inputTextInner {
+	display: block;
+    float: left;
+    height: var(--inputTextHeight);
+    line-height: var(--inputTextHeight);
+    font-size: var(--inputTextFontSize);
+    text-align: center;
+    font-family: var(--font);
+    color: var(--inputText);
+	user-select: none;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-o-user-select: none;
+	padding: var(--inputTextPadding);
+	transition: var(--inputTextTransition);
+}
+.input {
+    display: block;
+    float: left;
+    width: var(--inputWidth);
+    margin-left: var(--inputLeft);
+    height: var(--inputHeight);
+    line-height: var(--inputHeight);
+    font-size: var(--inputFontSize);
+    text-align: center;
+    font-family: var(--font);
+    color: var(--input);
+    background-color: var(--inputBox);
+    border: none;
+    border-radius: var(--inputRadius);
+    outline: none;
+    padding: 0;
+}
+
+#moreUnitsOuter {
+	display: block;
+    float: left;
+	width: 100%;
+	display: block;
+    float: left;
+	width: 100%;
+	margin-top: var(--moreUnitsTop);
+	cursor: default;
+	user-select: none;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-o-user-select: none;
+}
+#moreUnitsTitle {
+	display: block;
+	float: left;
+	width: 100%;
+    line-height: var(--moreUnitsTitleHeight);
+    font-size: var(--moreUnitsTitleFontSize);
+	text-align: center;
+	color: var(--moreUnitsTitle);
+	font-family: var(--font);
+	transition: 500ms;
+}
+#moreUnitsTitle:hover {
+	color: var(--moreUnitsTitleHover);
+}
+#moreUnits {
+	display: flex;
+	float: left;
+	width: 100%;
+	justify-content: center;
+	height: 3rem;
+}
+.moreUnit {
+	display: block;
+    float: left;
+	height: var(--moreUnitHeight);
+	margin: var(--moreUnitMargin);
+	padding: var(--moreUnitPadding);
+	font-size: var(--moreUnitFontSize);
+	line-height: var(--moreUnitHeight);
+	background-color: var(--moreUnitsBox);
+	border-radius: var(--moreUnitBorderRadius);
+	font-family: var(--font);
+	color: var(--moreUnitsText);
+	cursor: pointer;
+	transition: 300ms;
+}
+.moreUnit:hover {
+	color: var(--moreUnitTextHover);
+	transform: scale(1.1, 1.1);
+}
